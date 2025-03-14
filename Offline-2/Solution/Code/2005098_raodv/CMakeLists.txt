@@ -1,0 +1,31 @@
+build_lib(
+  LIBNAME raodv
+  SOURCE_FILES
+    helper/raodv-helper.cc
+    model/raodv-dpd.cc
+    model/raodv-id-cache.cc
+    model/raodv-neighbor.cc
+    model/raodv-packet.cc
+    model/raodv-routing-protocol.cc
+    model/raodv-rqueue.cc
+    model/raodv-rtable.cc
+  HEADER_FILES
+    helper/raodv-helper.h
+    model/raodv-dpd.h
+    model/raodv-id-cache.h
+    model/raodv-neighbor.h
+    model/raodv-packet.h
+    model/raodv-routing-protocol.h
+    model/raodv-rqueue.h
+    model/raodv-rtable.h
+  LIBRARIES_TO_LINK
+    ${libapplications}
+    ${libinternet-apps}
+    ${libwifi}
+  TEST_SOURCES
+    test/raodv-id-cache-test-suite.cc
+    test/raodv-regression.cc
+    test/raodv-test-suite.cc
+    test/loopback.cc
+    test/bug-772.cc
+)
